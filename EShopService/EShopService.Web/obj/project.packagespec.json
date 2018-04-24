@@ -14,7 +14,14 @@
     ],
     "frameworks": {
       "netcoreapp2.0": {
-        "projectReferences": {}
+        "projectReferences": {
+          "C:\\Projects\\EShopService\\EShopService\\EShopService.Core\\EShopService.Core.csproj": {
+            "projectPath": "C:\\Projects\\EShopService\\EShopService\\EShopService.Core\\EShopService.Core.csproj"
+          },
+          "C:\\Projects\\EShopService\\EShopService\\EShopService.Data\\EShopService.Data.csproj": {
+            "projectPath": "C:\\Projects\\EShopService\\EShopService\\EShopService.Data\\EShopService.Data.csproj"
+          }
+        }
       }
     },
     "warningProperties": {
@@ -26,6 +33,10 @@
   "frameworks": {
     "netcoreapp2.0": {
       "dependencies": {
+        "AutoMapper": {
+          "target": "Package",
+          "version": "[6.2.2, )"
+        },
         "Microsoft.AspNetCore.All": {
           "target": "Package",
           "version": "[2.0.3, )"

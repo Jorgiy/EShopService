@@ -1,5 +1,5 @@
 CREATE TABLE [PRODUCTS](
-	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[ID] [int] IDENTITY(1,1) NOT NULL,
 	[NAME] [varchar](100) NOT NULL,
 	[IMG_URI] [varchar](200) NOT NULL,
 	[PRICE] [decimal](18, 2) NOT NULL,
