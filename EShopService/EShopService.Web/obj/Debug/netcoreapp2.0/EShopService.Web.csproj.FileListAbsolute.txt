@@ -8,3 +8,7 @@ C:\Projects\EShopService\EShopService\EShopService.Web\obj\Debug\netcoreapp2.0\E
 C:\Projects\EShopService\EShopService\EShopService.Web\obj\Debug\netcoreapp2.0\EShopService.Web.AssemblyInfo.cs
 C:\Projects\EShopService\EShopService\EShopService.Web\obj\Debug\netcoreapp2.0\EShopService.Web.dll
 C:\Projects\EShopService\EShopService\EShopService.Web\obj\Debug\netcoreapp2.0\EShopService.Web.pdb
+C:\Projects\EShopService\EShopService\EShopService.Web\bin\Debug\netcoreapp2.0\EShopService.Core.dll
+C:\Projects\EShopService\EShopService\EShopService.Web\bin\Debug\netcoreapp2.0\EShopService.Data.dll
+C:\Projects\EShopService\EShopService\EShopService.Web\bin\Debug\netcoreapp2.0\EShopService.Core.pdb
+C:\Projects\EShopService\EShopService\EShopService.Web\bin\Debug\netcoreapp2.0\EShopService.Data.pdb

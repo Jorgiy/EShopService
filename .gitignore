@@ -1,2 +1,4 @@
 EShopService/.idea/*
 EShopService/EShopService.Web/bin/*
+EShopService/EShopService.Core/bin/*
+EShopService/EShopService.Data/bin/*
