@@ -1,21 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using EShopService.Core;
-using EShopService.Core.Dto;
+﻿using EShopService.Core;
 using EShopService.Data;
-using EShopService.Data.Models;
 using EShopService.Web.Extensions;
+using EShopService.Web.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace EShopService.Web
 {
@@ -49,6 +40,7 @@ namespace EShopService.Web
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseExceptionToHttpStatusCodeMapping();
             app.UseSwaggerUi(provider);
             app.UseMvc();
         }

@@ -50,6 +50,14 @@ namespace EShopService.Core.CoreServices
             {
                 throw new BuisenessException("It can not be page number with no size");
             }
+
+            if (pageNumber <= 0)
+            {
+                throw new ValidationException("Page number can not be zero or negative")
+                {
+                    InvalidFieldNames = new List<string> {nameof(pageNumber)}
+                };
+            }
             
             products = await _productRepository.GetPaginatedProducts(pageSize.Value, pageNumber ?? 1);
             return products.Select(x => _mapper.Map<Product, ProductDto>(x)).ToList();

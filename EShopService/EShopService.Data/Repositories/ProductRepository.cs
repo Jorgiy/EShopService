@@ -24,7 +24,7 @@ namespace EShopService.Data.Repositories
 
         public async Task<List<Product>> GetPaginatedProducts(int pageSize, int pageNumber)
         {
-            return await _dBcontext.Products.Skip(pageNumber - 1 * pageSize).Take(pageSize).ToListAsync();
+            return await _dBcontext.Products.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
         }
 
         public async Task<List<Product>> GetAllProducts()

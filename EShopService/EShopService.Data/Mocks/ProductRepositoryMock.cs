@@ -18,7 +18,7 @@ namespace EShopService.Data.Mocks
 
         public Task<List<Product>> GetPaginatedProducts(int pageSize, int pageNumber)
         {
-            return Task.FromResult(_mockContext.Skip(pageNumber - 1 * pageSize).Take(pageSize).ToList());
+            return Task.FromResult(_mockContext.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList());
         }
 
         public Task<List<Product>> GetAllProducts()

@@ -17,7 +17,7 @@ namespace EShopService.Data.Models
         [Column("PRICE")]
         public decimal Price { get; set; }
 
-        [Column("[DESCRIPTION]")]
+        [Column("DESCRIPTION")]
         public string Description { get; set; }
     }
 }

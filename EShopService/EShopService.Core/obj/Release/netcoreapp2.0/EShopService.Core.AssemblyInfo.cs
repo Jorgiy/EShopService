@@ -7,10 +7,10 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("EShopService.Web")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("EShopService.Core")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("EShopService.Web")]
-[assembly: System.Reflection.AssemblyTitleAttribute("EShopService.Web")]
+[assembly: System.Reflection.AssemblyProductAttribute("EShopService.Core")]
+[assembly: System.Reflection.AssemblyTitleAttribute("EShopService.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
