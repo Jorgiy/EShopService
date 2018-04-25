@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace EShopService.Core.Exceptions
 {
@@ -8,6 +9,6 @@ namespace EShopService.Core.Exceptions
         {
         }
 
-        public string InvalidFieldName { get; set; }
+        public List<string> InvalidFieldNames { get; set; }
     }
 }

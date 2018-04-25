@@ -27,7 +27,10 @@ namespace EShopService.Core.CoreServices
         {
             if (!id.HasValue)
             {
-                throw new ValidationException("Product identyfier can not be null");
+                throw new ValidationException("Product identyfier can not be null")
+                {
+                    InvalidFieldNames = new List<string> {nameof(id)}
+                };
             }
             
             var product = await _productRepository.GetById(id.Value);
@@ -45,7 +48,7 @@ namespace EShopService.Core.CoreServices
 
             if (pageNumber.HasValue && !pageSize.HasValue)
             {
-                throw new ValidationException("It can not be page number with no size");
+                throw new BuisenessException("It can not be page number with no size");
             }
             
             products = await _productRepository.GetPaginatedProducts(pageSize.Value, pageNumber ?? 1);
@@ -56,7 +59,10 @@ namespace EShopService.Core.CoreServices
         {
             if (!id.HasValue)
             {
-                throw new ValidationException("Product identyfier can not be null");
+                throw new ValidationException("Product identyfier can not be null")
+                {
+                    InvalidFieldNames = new List<string> {nameof(id)}
+                };
             }
 
             try

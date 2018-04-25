@@ -11,9 +11,6 @@ namespace EShopService.Core
     {
         public static void RegisterCoreServices(this IServiceCollection services)
         {
-            services.AddSingleton<MapperConfiguration>(new MapperConfiguration(x =>
-                x.CreateMap<Product, ProductDto>()));
-
             services.AddTransient<IProductCoreService, ProductCoreService>();
         }
     }

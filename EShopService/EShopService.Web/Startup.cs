@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using EShopService.Core;
+using EShopService.Core.Dto;
 using EShopService.Data;
+using EShopService.Data.Models;
+using EShopService.Web.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,22 +32,24 @@ namespace EShopService.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.RegisterData(new Config
-            {
-                DataBaseConnectionString = "",
-                UseMocks = true
-            });
+            var config = services.ConfigureSettings(Configuration);
+            services.RegisterData(config);
             services.RegisterCoreServices();
+            services.ConfigureMappers();
+            services.AddApiVersioning(x => x.ReportApiVersions = true);
+            services.AddSwagger();
+            services.AddMvcCore().AddVersionedApiExplorer(x => x.GroupNameFormat = "'v'VVV");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwaggerUi(provider);
             app.UseMvc();
         }
     }
