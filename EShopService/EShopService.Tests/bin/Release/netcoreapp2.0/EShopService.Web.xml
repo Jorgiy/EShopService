@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EShopService.Web</name>
+    </assembly>
+    <members>
+        <member name="M:EShopService.Web.Controllers.V1.ProductController.GetProduct(System.Nullable{System.Int32})">
+            <summary>
+            Get one product dy it's identifier
+            </summary>
+            <param name="id">Product's identifier</param>
+            <returns>Product entity</returns>
+        </member>
+        <member name="M:EShopService.Web.Controllers.V1.ProductController.GetPaginatedProducts(EShopService.Web.ViewModels.GetPaginatedProductsViewModel)">
+            <summary>
+            Get paginated products
+            </summary>
+            <param name="request">Count of products to return and number of portion to return (can not be defined if page size is not)</param>
+            <returns>Array of products</returns>
+        </member>
+        <member name="M:EShopService.Web.Controllers.V1.ProductController.UpdateProductDescription(EShopService.Web.ViewModels.UpdateProductDescriptionViewModel)">
+            <summary>
+            Update particuar product's description
+            </summary>
+            <param name="request">Product identifier and New description</param>
+            <returns></returns>
+        </member>
+        <member name="T:EShopService.Web.ViewModels.GetPaginatedProductsViewModel">
+            <summary>
+            Model of request for pafinated product's data
+            </summary>
+        </member>
+        <member name="P:EShopService.Web.ViewModels.GetPaginatedProductsViewModel.PageSize">
+            <summary>
+            Page size
+            </summary>
+        </member>
+        <member name="P:EShopService.Web.ViewModels.GetPaginatedProductsViewModel.PageNumber">
+            <summary>
+            Page number (if page size is not defined can not be defined)
+            </summary>
+        </member>
+        <member name="T:EShopService.Web.ViewModels.ProductViewModel">
+            <summary>
+            Model of product
+            </summary>
+        </member>
+        <member name="P:EShopService.Web.ViewModels.ProductViewModel.Id">
+            <summary>
+            Product's identifier
+            </summary>
+        </member>
+        <member name="P:EShopService.Web.ViewModels.ProductViewModel.Name">
+            <summary>
+            Product's name
+            </summary>
+        </member>
+        <member name="P:EShopService.Web.ViewModels.ProductViewModel.ImgUri">
+            <summary>
+            Link to prosuct's image
+            </summary>
+        </member>
+        <member name="P:EShopService.Web.ViewModels.ProductViewModel.Price">
+            <summary>
+            Product's price
+            </summary>
+        </member>
+        <member name="P:EShopService.Web.ViewModels.ProductViewModel.Description">
+            <summary>
+            Product's description
+            </summary>
+        </member>
+        <member name="T:EShopService.Web.ViewModels.UpdateProductDescriptionViewModel">
+            <summary>
+            Model for updating product's descripton
+            </summary>
+        </member>
+        <member name="P:EShopService.Web.ViewModels.UpdateProductDescriptionViewModel.Id">
+            <summary>
+            Product's identifier
+            </summary>
+        </member>
+        <member name="P:EShopService.Web.ViewModels.UpdateProductDescriptionViewModel.Description">
+            <summary>
+            New description
+            </summary>
+        </member>
+    </members>
+</doc>

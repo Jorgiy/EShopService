@@ -1,0 +1,8 @@
+C:\Projects\EShopService\EShopService\EShopService.Data\bin\Release\netcoreapp2.0\EShopService.Data.deps.json
+C:\Projects\EShopService\EShopService\EShopService.Data\bin\Release\netcoreapp2.0\EShopService.Data.dll
+C:\Projects\EShopService\EShopService\EShopService.Data\bin\Release\netcoreapp2.0\EShopService.Data.pdb
+C:\Projects\EShopService\EShopService\EShopService.Data\obj\Release\netcoreapp2.0\EShopService.Data.csproj.CoreCompileInputs.cache
+C:\Projects\EShopService\EShopService\EShopService.Data\obj\Release\netcoreapp2.0\EShopService.Data.AssemblyInfoInputs.cache
+C:\Projects\EShopService\EShopService\EShopService.Data\obj\Release\netcoreapp2.0\EShopService.Data.AssemblyInfo.cs
+C:\Projects\EShopService\EShopService\EShopService.Data\obj\Release\netcoreapp2.0\EShopService.Data.dll
+C:\Projects\EShopService\EShopService\EShopService.Data\obj\Release\netcoreapp2.0\EShopService.Data.pdb

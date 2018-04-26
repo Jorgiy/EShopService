@@ -1,0 +1,10 @@
+C:\Projects\EShopService\EShopService\EShopService.Core\bin\Debug\netcoreapp2.0\EShopService.Core.deps.json
+C:\Projects\EShopService\EShopService\EShopService.Core\bin\Debug\netcoreapp2.0\EShopService.Core.dll
+C:\Projects\EShopService\EShopService\EShopService.Core\bin\Debug\netcoreapp2.0\EShopService.Core.pdb
+C:\Projects\EShopService\EShopService\EShopService.Core\bin\Debug\netcoreapp2.0\EShopService.Data.dll
+C:\Projects\EShopService\EShopService\EShopService.Core\bin\Debug\netcoreapp2.0\EShopService.Data.pdb
+C:\Projects\EShopService\EShopService\EShopService.Core\obj\Debug\netcoreapp2.0\EShopService.Core.csproj.CoreCompileInputs.cache
+C:\Projects\EShopService\EShopService\EShopService.Core\obj\Debug\netcoreapp2.0\EShopService.Core.AssemblyInfoInputs.cache
+C:\Projects\EShopService\EShopService\EShopService.Core\obj\Debug\netcoreapp2.0\EShopService.Core.AssemblyInfo.cs
+C:\Projects\EShopService\EShopService\EShopService.Core\obj\Debug\netcoreapp2.0\EShopService.Core.dll
+C:\Projects\EShopService\EShopService\EShopService.Core\obj\Debug\netcoreapp2.0\EShopService.Core.pdb
