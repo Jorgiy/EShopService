@@ -13,7 +13,7 @@ namespace EShopService.Web.Middleware
 {
     public static class ExceptionMiddleware
     {
-        private static readonly Dictionary<Type, HttpStatusCode> _exceptionStatusCodes = new Dictionary<Type, HttpStatusCode>
+        private static readonly Dictionary<Type, HttpStatusCode> ExceptionStatusCodes = new Dictionary<Type, HttpStatusCode>
         {
             {typeof(ValidationException), HttpStatusCode.BadRequest},
             {typeof(BuisenessException), (HttpStatusCode)422}
@@ -29,8 +29,8 @@ namespace EShopService.Web.Middleware
                 }
                 catch (Exception ex)
                 {
-                    context.Response.StatusCode = _exceptionStatusCodes.ContainsKey(ex.GetType())
-                        ? (int)_exceptionStatusCodes[ex.GetType()] : (int)HttpStatusCode.InternalServerError;
+                    context.Response.StatusCode = ExceptionStatusCodes.ContainsKey(ex.GetType())
+                        ? (int)ExceptionStatusCodes[ex.GetType()] : (int)HttpStatusCode.InternalServerError;
 
                     var errorResponceContent = GetExceptionResponse(ex);
 

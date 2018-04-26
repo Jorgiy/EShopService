@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopService.Core", "EShopS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopService.Data", "EShopService.Data\EShopService.Data.csproj", "{BF94BD89-EFEC-4852-9A7F-BA0780AAA400}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopService.Tests", "EShopService.Tests\EShopService.Tests.csproj", "{63F5E27F-7A5A-429C-BA29-BF1A8910EC5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{BF94BD89-EFEC-4852-9A7F-BA0780AAA400}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF94BD89-EFEC-4852-9A7F-BA0780AAA400}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF94BD89-EFEC-4852-9A7F-BA0780AAA400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63F5E27F-7A5A-429C-BA29-BF1A8910EC5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63F5E27F-7A5A-429C-BA29-BF1A8910EC5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63F5E27F-7A5A-429C-BA29-BF1A8910EC5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63F5E27F-7A5A-429C-BA29-BF1A8910EC5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

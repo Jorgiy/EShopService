@@ -48,7 +48,10 @@ namespace EShopService.Core.CoreServices
 
             if (pageNumber.HasValue && !pageSize.HasValue)
             {
-                throw new BuisenessException("It can not be page number with no size");
+                throw new ValidationException("It can not be page number with no size")
+                {
+                    InvalidFieldNames = new List<string> {nameof(pageSize)}
+                };
             }
 
             if (pageNumber <= 0)

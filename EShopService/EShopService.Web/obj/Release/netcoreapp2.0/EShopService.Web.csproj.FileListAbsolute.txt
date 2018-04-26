@@ -12,3 +12,4 @@ C:\Projects\EShopService\EShopService\EShopService.Web\obj\Release\netcoreapp2.0
 C:\Projects\EShopService\EShopService\EShopService.Web\obj\Release\netcoreapp2.0\EShopService.Web.AssemblyInfo.cs
 C:\Projects\EShopService\EShopService\EShopService.Web\obj\Release\netcoreapp2.0\EShopService.Web.dll
 C:\Projects\EShopService\EShopService\EShopService.Web\obj\Release\netcoreapp2.0\EShopService.Web.pdb
+C:\Projects\EShopService\EShopService\EShopService.Web\bin\Release\netcoreapp2.0\EShopService.Web.xml

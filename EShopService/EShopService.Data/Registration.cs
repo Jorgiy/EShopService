@@ -10,7 +10,7 @@ namespace EShopService.Data
     {
         public static void RegisterData(this IServiceCollection services, Config config)
         {
-            if (config.UseMocks)
+            if (config?.UseMocks ?? true)
             {
                 services.AddTransient<IProductRepository, ProductRepositoryMock>();
             }
