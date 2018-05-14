@@ -4,7 +4,7 @@
         <name>EShopService.Web</name>
     </assembly>
     <members>
-        <member name="M:EShopService.Web.Controllers.V1.ProductController.GetProduct(System.Nullable{System.Int32})">
+        <member name="M:EShopService.Web.Controllers.V1.ProductController.GetProduct(System.Int32)">
             <summary>
             Get one product dy it's identifier
             </summary>
@@ -15,8 +15,14 @@
             <summary>
             Get paginated products
             </summary>
-            <param name="request">Count of products to return and number of portion to return (can not be defined if page size is not)</param>
-            <returns>Array of products</returns>
+            <param name="request">Count of products to return and number of portion to return</param>
+            <returns>All paginated products</returns>
+        </member>
+        <member name="M:EShopService.Web.Controllers.V1.ProductController.GetAllProducts">
+            <summary>
+            Get all products
+            </summary>
+            <returns>All products</returns>
         </member>
         <member name="M:EShopService.Web.Controllers.V1.ProductController.UpdateProductDescription(EShopService.Web.ViewModels.UpdateProductDescriptionViewModel)">
             <summary>

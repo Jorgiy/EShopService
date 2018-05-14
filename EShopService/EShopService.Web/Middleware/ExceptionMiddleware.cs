@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using EShopService.Core.Exceptions;
+using EShopService.Web.Exceptions;
 using EShopService.Web.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -16,7 +17,7 @@ namespace EShopService.Web.Middleware
         private static readonly Dictionary<Type, HttpStatusCode> ExceptionStatusCodes = new Dictionary<Type, HttpStatusCode>
         {
             {typeof(ValidationException), HttpStatusCode.BadRequest},
-            {typeof(BuisenessException), (HttpStatusCode)422}
+            {typeof(BuisenessException), HttpStatusCode.NotFound}
         };
         
          public static void UseExceptionToHttpStatusCodeMapping(this IApplicationBuilder app)

@@ -8,11 +8,11 @@
         /// <summary>
         /// Page size
         /// </summary>
-        public int? PageSize { get; set; }
+        public int PageSize { get; set; }
 
         /// <summary>
         /// Page number (if page size is not defined can not be defined)
         /// </summary>
-        public int? PageNumber { get; set; }
+        public int PageNumber { get; set; }
     }
 }

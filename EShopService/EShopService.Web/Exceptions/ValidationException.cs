@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EShopService.Core.Exceptions
+namespace EShopService.Web.Exceptions
 {
     public class ValidationException : Exception
     {

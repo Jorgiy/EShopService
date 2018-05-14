@@ -36,9 +36,7 @@ namespace EShopService.Tests.IntegrationTests
             var result = await _testContext.Client.GetAsync("api/v1.0/product/11");
 
             // assert
-            result.EnsureSuccessStatusCode();
-
-            result.StatusCode.Should().Be(HttpStatusCode.NoContent);
+            result.StatusCode.Should().Be(HttpStatusCode.NotFound);
         }
         
         [Fact]
@@ -52,34 +50,20 @@ namespace EShopService.Tests.IntegrationTests
         }
         
         [Fact]
-        public async Task GetPaginatedProducts_PassNoArguments_OK()
-        {
-            // act
-            var result = await _testContext.Client.GetAsync("api/v1.0/products");
-
-            // assert
-            result.EnsureSuccessStatusCode();
-
-            result.StatusCode.Should().Be(HttpStatusCode.OK);
-        }
-        
-        [Fact]
         public async Task GetPaginatedProducts_PassOnlyPageSize_OK()
         {
             // act
-            var result = await _testContext.Client.GetAsync("api/v1.0/products?PageSize=1");
+            var result = await _testContext.Client.GetAsync("api/v1.0/paginated-products?PageSize=1");
 
             // assert
-            result.EnsureSuccessStatusCode();
-
-            result.StatusCode.Should().Be(HttpStatusCode.OK);
+            result.StatusCode.Should().Be(HttpStatusCode.BadRequest);
         }
         
         [Fact]
         public async Task GetPaginatedProducts_PassBothArguments_OK()
         {
             // act
-            var result = await _testContext.Client.GetAsync("api/v1.0/products?PageSize=1&PageNumber=1");
+            var result = await _testContext.Client.GetAsync("api/v1.0/paginated-products?PageSize=1&PageNumber=1");
 
             // assert
             result.EnsureSuccessStatusCode();
@@ -91,7 +75,7 @@ namespace EShopService.Tests.IntegrationTests
         public async Task GetPaginatedProducts_PassOnlyPageNumber_BadRequest()
         {
             // act
-            var result = await _testContext.Client.GetAsync("api/v1.0/products?PageNumber=1");
+            var result = await _testContext.Client.GetAsync("api/v1.0/paginated-products?PageNumber=1");
 
             // assert
             result.StatusCode.Should().Be(HttpStatusCode.BadRequest);
@@ -101,10 +85,30 @@ namespace EShopService.Tests.IntegrationTests
         public async Task GetPaginatedProducts_PassNegativePageNumber_BadRequest()
         {
             // act
-            var result = await _testContext.Client.GetAsync("api/v1.0/products?PageSize=3&PageNumber=-1");
+            var result = await _testContext.Client.GetAsync("api/v1.0/paginated-products?PageSize=3&PageNumber=-1");
 
             // assert
             result.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+        }
+        
+        [Fact]
+        public async Task GetPaginatedProducts_PassNegativePageSize_BadRequest()
+        {
+            // act
+            var result = await _testContext.Client.GetAsync("api/v1.0/paginated-products?PageSize=-3");
+
+            // assert
+            result.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+        }
+        
+        [Fact]
+        public async Task GetAllProducts_DefaultQuery_OK()
+        {
+            // act
+            var result = await _testContext.Client.GetAsync("api/v1.0/all-products");
+
+            // assert
+            result.StatusCode.Should().Be(HttpStatusCode.OK);
         }
         
         [Fact]
@@ -142,7 +146,7 @@ namespace EShopService.Tests.IntegrationTests
             var result = await _testContext.Client.SendAsync(request);
 
             // assert
-            result.StatusCode.Should().Be(422);
+            result.StatusCode.Should().Be(HttpStatusCode.NotFound);
         }
         
         [Fact]

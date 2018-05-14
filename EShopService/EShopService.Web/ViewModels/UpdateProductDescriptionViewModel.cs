@@ -8,7 +8,7 @@
         /// <summary>
         /// Product's identifier
         /// </summary>
-        public int? Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// New description

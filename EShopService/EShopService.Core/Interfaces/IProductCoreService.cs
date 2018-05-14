@@ -6,10 +6,12 @@ namespace EShopService.Core.Interfaces
 {
     public interface IProductCoreService
     {
-        Task<ProductDto> GetProductById(int? id);
+        Task<ProductDto> GetProductById(int id);
 
-        Task<List<ProductDto>> GetPaginatedProducts(int? pageSize, int? pageNumber);
+        Task<List<ProductDto>> GetPaginatedProducts(int pageSize, int pageNumber);
+        
+        Task<List<ProductDto>> GetAllProducts();
 
-        Task UpdateProductDescription(int? id, string description);
+        Task UpdateProductDescription(int id, string description);
     }
 }

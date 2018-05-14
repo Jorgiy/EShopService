@@ -23,66 +23,39 @@ namespace EShopService.Core.CoreServices
             _mapper = mapperConfiguration.CreateMapper();
         }
         
-        public async Task<ProductDto> GetProductById(int? id)
+        public async Task<ProductDto> GetProductById(int id)
         {
-            if (!id.HasValue)
+            var product = await _productRepository.GetById(id);
+
+            if (product == null)
             {
-                throw new ValidationException("Product identyfier can not be null")
-                {
-                    InvalidFieldNames = new List<string> {nameof(id)}
-                };
+                throw new BuisenessException($"Product with id = {id} not exsists");
             }
             
-            var product = await _productRepository.GetById(id.Value);
             return _mapper.Map<Product, ProductDto>(product);
         }
 
-        public async Task<List<ProductDto>> GetPaginatedProducts(int? pageSize, int? pageNumber)
+        public async Task<List<ProductDto>> GetPaginatedProducts(int pageSize, int pageNumber)
         {
-            List<Product> products;
-            if (!pageSize.HasValue && !pageNumber.HasValue)
-            {
-                products = await _productRepository.GetAllProducts();
-                return products.Select(x => _mapper.Map<Product, ProductDto>(x)).ToList();
-            }
-
-            if (pageNumber.HasValue && !pageSize.HasValue)
-            {
-                throw new ValidationException("It can not be page number with no size")
-                {
-                    InvalidFieldNames = new List<string> {nameof(pageSize)}
-                };
-            }
-
-            if (pageNumber <= 0)
-            {
-                throw new ValidationException("Page number can not be zero or negative")
-                {
-                    InvalidFieldNames = new List<string> {nameof(pageNumber)}
-                };
-            }
-            
-            products = await _productRepository.GetPaginatedProducts(pageSize.Value, pageNumber ?? 1);
+            var products = await _productRepository.GetPaginatedProducts(pageSize, pageNumber);
             return products.Select(x => _mapper.Map<Product, ProductDto>(x)).ToList();
         }
 
-        public async Task UpdateProductDescription(int? id, string description)
+        public async Task<List<ProductDto>> GetAllProducts()
         {
-            if (!id.HasValue)
-            {
-                throw new ValidationException("Product identyfier can not be null")
-                {
-                    InvalidFieldNames = new List<string> {nameof(id)}
-                };
-            }
+            var products = await _productRepository.GetAllProducts();
+            return products.Select(x => _mapper.Map<Product, ProductDto>(x)).ToList();
+        }
 
+        public async Task UpdateProductDescription(int id, string description)
+        {
             try
             {
-                await _productRepository.UpdateDescription(id.Value, description);
+                await _productRepository.UpdateDescription(id, description);
             }
             catch (ObjectNotFoundException)
             {
-                throw new BuisenessException($"Product with id = {id.Value} not exsists");
+                throw new BuisenessException($"Product with id = {id} not exsists");
             }
         }
     }
